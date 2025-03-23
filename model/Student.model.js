@@ -30,10 +30,14 @@ const Student = sequelize.define("Student", {
 
 Student.belongsTo(Classroom, {
   foreignKey: "ClassroomId",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 Classroom.hasMany(Student, {
   foreignKey: "ClassroomId",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 module.exports = Student;

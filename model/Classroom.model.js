@@ -15,10 +15,14 @@ const Classroom = sequelize.define("Classroom", {
 // relationships
 Classroom.belongsTo(Teacher, {
   foreignKey: "TeacherId",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 Teacher.hasMany(Classroom, {
   foreignKey: "TeacherId",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
 });
 
 module.exports = Classroom;
